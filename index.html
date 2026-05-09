@@ -1,33 +1,113 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh">
 <head>
-  <meta charset="utf-8">
-  <title>豆豆字幕提取器</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>豆豆 AI 电影剪辑工作站</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+body{
+    background:#0f172a;
+    color:white;
+    overflow-x:hidden;
+}
+
+.glow{
+    box-shadow:0 0 25px rgba(59,130,246,.5);
+}
+
+.card{
+    background:rgba(255,255,255,.05);
+    backdrop-filter:blur(10px);
+    border:1px solid rgba(255,255,255,.1);
+}
+
+.gradient{
+    background:linear-gradient(135deg,#3b82f6,#8b5cf6);
+}
+</style>
+
 </head>
+<body>
 
-<body style="font-family:Arial;padding:40px;">
+<div class="min-h-screen p-8">
 
-  <h1>豆豆字幕提取器</h1>
+    <div class="max-w-6xl mx-auto">
 
-  <form
-    action="/upload"
-    method="post"
-    enctype="multipart/form-data"
-  >
+        <div class="text-center mb-12">
+            <h1 class="text-6xl font-bold mb-4 gradient bg-clip-text text-transparent">
+                豆豆 AI 电影工作站
+            </h1>
 
-    <input
-      type="file"
-      name="video"
-      required
-    >
+            <p class="text-gray-400 text-xl">
+                AI 自动字幕 · 自动剪辑 · 自动高光提取
+            </p>
+        </div>
 
-    <br><br>
+        <div class="grid md:grid-cols-3 gap-6">
 
-    <button type="submit">
-      开始识别字幕
-    </button>
+            <div class="card rounded-3xl p-6 glow">
+                <h2 class="text-2xl font-bold mb-4">
+                    上传电影
+                </h2>
 
-  </form>
+                <input type="file"
+                class="w-full p-4 rounded-xl bg-slate-800">
+
+                <button class="mt-4 w-full gradient p-4 rounded-xl font-bold">
+                    开始上传
+                </button>
+            </div>
+
+            <div class="card rounded-3xl p-6">
+                <h2 class="text-2xl font-bold mb-4">
+                    AI 自动处理
+                </h2>
+
+                <div class="space-y-4">
+
+                    <div class="bg-slate-800 p-4 rounded-xl">
+                        自动提取字幕
+                    </div>
+
+                    <div class="bg-slate-800 p-4 rounded-xl">
+                        自动识别高光片段
+                    </div>
+
+                    <div class="bg-slate-800 p-4 rounded-xl">
+                        自动生成短视频
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="card rounded-3xl p-6">
+                <h2 class="text-2xl font-bold mb-4">
+                    导出结果
+                </h2>
+
+                <button class="gradient w-full p-4 rounded-xl mb-4">
+                    下载字幕
+                </button>
+
+                <button class="gradient w-full p-4 rounded-xl mb-4">
+                    下载短视频
+                </button>
+
+                <button class="gradient w-full p-4 rounded-xl">
+                    发布到抖音
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
 
 </body>
 </html>
